@@ -1,0 +1,72 @@
+
+  .backgroundPic5 {
+    width: 100%;
+    height: 86.4vh;
+    border-radius: 15px;
+    z-index: 99999999999;
+    position: relative;
+  }
+
+
+  .backgroundPic5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(26, 24, 24, 0.5); 
+    z-index: 2; 
+    border-radius: 14px;
+
+}
+
+.backgroundPic3 {
+    border-radius: 15px;
+    z-index: 99999999999;
+    position: relative;
+  }
+
+
+  .backgroundPic3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(26, 24, 24, 0.5); 
+    z-index: 2; 
+    border-radius: 15px;
+
+}
+
+.backgroundPic4 {
+  border-radius: 15px;
+  z-index: 99999999999;
+  position: relative;
+}
+
+
+.backgroundPic4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(26, 24, 24, 0.5); 
+  z-index: 2; 
+  border-radius: 15px;
+
+}
+  @media screen and (max-width: 1400px) {
+    .videoBox {
+    display: none;
+    }
+  
+  }
+  

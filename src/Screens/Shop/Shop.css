@@ -1,0 +1,11 @@
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+  }
+.card{
+   width: 280px;
+   border-radius: 10px;
+   margin: 10px;
+}
+body{
+  background-color: rgba(245, 237, 218, 1);
+}

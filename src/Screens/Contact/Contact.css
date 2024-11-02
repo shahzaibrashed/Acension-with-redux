@@ -1,0 +1,31 @@
+.inpSection{
+outline: none;
+border: none;
+background-color: transparent;
+border-bottom: 1.05px solid rgba(202, 202, 202, 1);
+font-weight: 400;
+width: 330px;
+height: 50px;
+}
+textarea{
+width: 100%;
+outline: none;
+outline: none;
+border: none;
+background-color: transparent;
+border-bottom: 1.05px solid rgba(202, 202, 202, 1);
+font-weight: 400;
+height: 100px;
+margin-top: 10px;
+margin-left: 40px;
+margin-right: 40px;
+}
+@media screen and (max-width: 1399px) {
+    .iconBox {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 126px;
+    text-align: center;
+    }
+  }

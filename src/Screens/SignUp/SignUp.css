@@ -1,0 +1,17 @@
+select{
+    color: gray;
+    font-size: 10px;
+    height: 40px;
+}
+option{
+    color: gray;
+    font-size: 10px;
+}
+.mainbody{
+    width: 95vw;
+}
+@media screen and (min-width: 768px) {
+    .mainbody {
+     width: 50vw;
+    }
+  }

@@ -1,0 +1,25 @@
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    /* margin-left: 150px; */
+    /* border: 1px solid black; */
+
+}
+
+.guardian {
+    width: 150px;
+    height: 37px;
+    text-align: center;
+    /* border: 1px solid black; */
+    /* margin-right: 150px; */
+
+}
+
+.nav-list {
+    /* margin-left: 200px; */
+    gap: 50px;
+    margin-top: 40px;
+    /* border: 1px solid black; */
+}
+

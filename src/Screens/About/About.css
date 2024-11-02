@@ -1,0 +1,89 @@
+.boxButton{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgba(227, 6, 19, 1);
+    float: right;
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.boxButton::before{
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: #ffff;
+    right: -10px;
+    top: 20px;
+    padding: 10px;
+    border-radius: 100% ;
+
+}
+
+
+
+  .back-people-Image {
+    position: relative;
+    z-index: 9999999999;
+}
+
+.back-people-Image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(26, 24, 24, 0.5); 
+    z-index: 1; 
+}
+
+
+
+
+.shapMain{
+background-image: url("../../assest/Image/VectorMain.png");
+width: 300px;
+height: 300px;
+/* border-radius: 105% 65% 37% 147% / 58% 86% 98% 120%; */
+position: relative;
+background-size: cover;
+}
+.leftTopImage{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 70px;
+}
+.RightBottomImage{
+    position: absolute;
+    left: 160px;
+    top: 250px;
+    z-index: 999;
+    width: 170px;
+}
+.RightTopImage{
+    position: absolute;
+    left: 200px;
+    top: 14px;
+    z-index: 999;
+    width: 30px;
+}
+
+.CenterImage{
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    bottom: 25%;
+    right: auto;
+    width: 275px;
+    height: 220px;
+    clip-path: polygon( 50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+    transform: rotate(-30deg);
+
+}
