@@ -4,8 +4,8 @@ import PeopleImg1 from '../../assest/Image/girl1.png'
 import PeopleImg2 from '../../assest/Image/girl2.png'
 import Header from '../../../src/Components/Header/Header'
 import Footer from '../../../src/Components/layout/Footer'
-import Carousel from 'react-bootstrap/Carousel';
-import ExampleCarouselImage from 'components/ExampleCarouselImage';
+// import Carousel from 'react-bootstrap/Carousel';
+// import ExampleCarouselImage from 'components/ExampleCarouselImage';
 const Event = () => {
 
 
