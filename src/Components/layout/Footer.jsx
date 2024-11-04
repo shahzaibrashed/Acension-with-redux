@@ -116,7 +116,7 @@ const Footer = () => {
             <div
               style={{
                 height: '50px', display: 'flex', justifyContent: "space-around", flexWrap: 'wrap', background: "rgba(43, 60, 88, 1)"
-                ,padding:"10px" }}
+                }}
             >
               <div className='text-secondary '>@2024, All rights reserved</div>
               <div className='d-flex gap-3'>
