@@ -1,23 +1,42 @@
-.logo {
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
-}
-
-.guardian {
-    width: 150px;
-    height: 37px;
-    text-align: center;
-}
-
-.nav-list {
-    margin: auto;
-    gap: 50px;
-    margin-top: 40px;
-}
-@media screen and (max-width: 1399px) {
-   .nav-list{
-    gap: 0px;
-    margin-top: 10px;
+.navlist{
+    max-height: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    font-size: 17px;
+    align-items: center;
+   }
+@media (max-width: 768px) {
+    .navlist{
+        max-height: 200px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-size: 15px;
+        align-items: center;
+       }
+  
+    .logo {
+      width: 60px; 
+    }
+  
+    .guardian {
+      width: 120px;
+      height: 35px;
     }
   }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid gray;
+  }
+  
+  
+
+
+  
+

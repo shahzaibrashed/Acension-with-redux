@@ -14,7 +14,7 @@ const Contact = () => {
         <Header/>
             {/* .........Content Section....... */}
 
-            <div className='container' style={{ display: "flex",justifyContent:"space-between", flexWrap: "wrap", flexWrap: "wrap", margin: "auto", marginTop: "30px", gap: '20px' }}>
+            <div className='container' style={{ display: "flex",justifyContent:"space-between", flexWrap: "wrap", margin: "auto", marginTop: "30px", gap: '20px' }}>
 
 
                 <div>
@@ -27,14 +27,12 @@ const Contact = () => {
 
                     }}>Get Started</p>
 
-                    <p style={{
+                    <p className='fs-1' style={{
                         fontFamily: " Inter",
-                        fontSize: "60.63px",
                         fontWeight: "700",
                     }}>Get in touch with us.</p>
-                    <p style={{
+                    <p className='fs-1' style={{
                         fontFamily: " Inter",
-                        fontSize: "60.63px",
                         fontWeight: "700",
                     }}>We're here to assist you.</p>
 
@@ -46,9 +44,9 @@ const Contact = () => {
                     paddingBottom:"10px",
                 }}>
 
-                <TwitterIcon style={{ color: 'gray',height:"60px",width:"40px" }} />
-                <LinkedInIcon style={{ color: 'gray',height:"60px",width:"40px" }} />
-                <FacebookIcon style={{ color: 'gray',height:"60px",width:"40px" }} />
+                <TwitterIcon style={{ color: 'gray',height:"60px",width:"30px" }} />
+                <LinkedInIcon style={{ color: 'gray',height:"60px",width:"30px" }} />
+                <FacebookIcon style={{ color: 'gray',height:"60px",width:"30px" }} />
                 </div>
             </div>
 
@@ -76,3 +74,6 @@ const Contact = () => {
     )
 }
 export default Contact
+
+
+

@@ -8,6 +8,7 @@ import Shop from "../Screens/Shop/Shop"
 import Contact from "../Screens/Contact/Contact"
 import Event from "../Screens/Event/Event"
 import GuardianDashboard from "../Screens/GuardianDashboard/GuardianDashboard"
+import CartItems from "../Screens/Cart/CartItems"
 export const RouterList = [
 
     {
@@ -25,12 +26,10 @@ export const RouterList = [
         path: "/Login",
         element: <Login />
     },
-    ,
     {
         path: "/SignUp",
         element: <SignUp />
     },
-    ,
     {
         path: "/Shop",
         element: <Shop />
@@ -46,6 +45,10 @@ export const RouterList = [
     {
         path: "/GuardianDashboard",
         element: <GuardianDashboard />
+    },
+    {
+        path: "/carts",
+        element: <CartItems/>
     },
     
 ]
