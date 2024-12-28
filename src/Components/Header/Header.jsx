@@ -11,19 +11,18 @@ import Logo from '../../assest/Image/FFF_Ascension_LO 1.png';
 import { useSelector } from 'react-redux';
 
 function Header() {
+  
   const location = useLocation();
-  const { cart } = useSelector((state) => state.user)
+  const { cart } = useSelector((state) => state.cartsItems)
 
 
   return (
     <div className="container m-auto">
       <Navbar expand="lg" className="bg-bod" style={{ padding: '0.5rem' }}>
         <Container fluid>
-        
-          <div className="logo" style={{ maxWidth: '120px' }}>
-            <img src={Logo} alt="Logo" style={{ width: '100%', height: 'auto' }} />
-          </div>
-
+<div className="logo" style={{ maxWidth: '120px' }}>
+  <img src={Logo} alt="Logo" style={{ width: '100%', height: 'auto' }} />
+</div>
       
           <Navbar.Toggle aria-controls="navbarScroll" />
 
@@ -40,6 +39,7 @@ function Header() {
                 { path: '/Shop', label: 'Shop' },
                 { path: '/About', label: 'About Us' },
                 { path: '/Contact', label: 'Contact Us' },
+                { path: '/favourite', label: 'Favourite List' },
               ].map((navItem) => (
                 <Link
                   as={NavLink}
@@ -64,16 +64,6 @@ function Header() {
 
         
               <Link to={"/carts"} style={{ position: 'relative' }}>
-                <p
-                  style={{
-                    margin: 0,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: location.pathname === "/carts" ? 'red' : 'black',
-                  }}
-                >
-                  Cart
                   <svg
                    
                     xmlns="http://www.w3.org/2000/svg"
@@ -104,8 +94,9 @@ function Header() {
                   >
                     {cart.length}
                   </span>
-                </p>
+                
               </Link>
+
             </Nav>
 
         

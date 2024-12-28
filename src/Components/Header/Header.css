@@ -6,9 +6,25 @@
     font-size: 17px;
     align-items: center;
    }
+
+   @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .logo img {
+    animation: spin 20s linear infinite;
+    border-radius: 50%; 
+  }
+  
+
 @media (max-width: 768px) {
     .navlist{
-        max-height: 200px;
+        max-height: 300px;
         display: flex;
         justify-content: center;
         gap: 10px;

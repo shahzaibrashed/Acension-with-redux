@@ -1,4 +1,3 @@
-
 import Login from "../Screens/Login/Login"
 import About from "../Screens/About/About"
 import Home from "../Screens/Home/Home"
@@ -9,6 +8,7 @@ import Contact from "../Screens/Contact/Contact"
 import Event from "../Screens/Event/Event"
 import GuardianDashboard from "../Screens/GuardianDashboard/GuardianDashboard"
 import CartItems from "../Screens/Cart/CartItems"
+import Favourite from "../Screens/Favourite/Favourite"
 export const RouterList = [
 
     {
@@ -49,6 +49,9 @@ export const RouterList = [
     {
         path: "/carts",
         element: <CartItems/>
+    },{
+        path: "/Favourite",
+        element: <Favourite/>
     },
     
 ]

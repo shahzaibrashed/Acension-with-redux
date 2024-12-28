@@ -1,5 +1,4 @@
-
-import fabiconPic from'../../assest/Image/fabian-centeno-Snce5c3YjgI-unsplash 1.png'
+import fabiconPic from '../../assest/Image/fabian-centeno-Snce5c3YjgI-unsplash 1.png'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import AboutImage from '../../assest/Image/aboutPageImage.png';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
@@ -10,16 +9,17 @@ import Footer from '../../../src/Components/layout/Footer'
 const About = () => {
   return (
     <>
-    <Header/>
+      <Header />
       {/* ........main Container...... */}
-    
-    <section>
-        <div style={{width: "100%",
-}}>
-          <img src={AboutImage} height="100%" width="100%" alt="" />  
+
+      <section>
+        <div style={{
+          width: "100%",
+        }}>
+          <img src={AboutImage} height="100%" width="100%" alt="" />
         </div>
-    </section>
-       
+      </section>
+
       {/* ........Cermonay Contant ...... */}
       <section>
         <div className='mt-4 text-center text-secondary'>
@@ -28,27 +28,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* ........video Contant ...... */}
-
+      {/* .........video Contant ........ */}
       <section>
+
         <div className='d-flex justify-content-evenly flex-wrap mt-5'>
-        <div className='backgroundPic1' style={{
-    margin:"10px",
-            height: "180px",
-            width: "270px",
-            borderRadius: "14px",
-            display: "flex",
-            flexWrap: 'wrap',
-            justifyContent: "center",
-          }}>
-           <img style={{borderRadius:"15px"}} src={PeopleImg1} height="100%" width="100%" alt="" />
-            <div style={{position:"relative",bottom:"120px", height: "40px", width: "40px", borderRadius: "50px",margin:"auto",background:"white"  }}>
-              <div style={{color:"red"}}><PlayArrowIcon style={{fontSize:"40px"}}/></div>
-            </div>
-          </div>
-         
           <div className='backgroundPic1' style={{
-    margin:"10px",
+            margin: "10px",
             height: "180px",
             width: "270px",
             borderRadius: "14px",
@@ -56,14 +41,14 @@ const About = () => {
             flexWrap: 'wrap',
             justifyContent: "center",
           }}>
-           <img style={{borderRadius:"15px"}} src={PeopleImg2} height="100%" width="100%" alt="" />
-            <div style={{position:"relative",bottom:"120px", height: "40px", width: "40px", borderRadius: "50px",margin:"auto",background:"white"  }}>
-              <div style={{color:"red"}}><PlayArrowIcon style={{fontSize:"40px"}}/></div>
+            <img style={{ borderRadius: "15px" }} src={PeopleImg1} height="100%" width="100%" alt="" />
+            <div style={{ position: "relative", bottom: "120px", height: "40px", width: "40px", borderRadius: "50px", margin: "auto", background: "white" }}>
+              <div style={{ color: "red" }}><PlayArrowIcon style={{ fontSize: "40px" }} /></div>
             </div>
           </div>
 
           <div className='backgroundPic1' style={{
-    margin:"10px",
+            margin: "10px",
             height: "180px",
             width: "270px",
             borderRadius: "14px",
@@ -71,9 +56,24 @@ const About = () => {
             flexWrap: 'wrap',
             justifyContent: "center",
           }}>
-           <img style={{borderRadius:"15px"}} src={PeopleImg1} height="100%" width="100%" alt="" />
-            <div style={{position:"relative",bottom:"120px", height: "40px", width: "40px", borderRadius: "50px",margin:"auto",background:"white"  }}>
-              <div style={{color:"red"}}><PlayArrowIcon style={{fontSize:"40px"}}/></div>
+            <img style={{ borderRadius: "15px" }} src={PeopleImg2} height="100%" width="100%" alt="" />
+            <div style={{ position: "relative", bottom: "120px", height: "40px", width: "40px", borderRadius: "50px", margin: "auto", background: "white" }}>
+              <div style={{ color: "red" }}><PlayArrowIcon style={{ fontSize: "40px" }} /></div>
+            </div>
+          </div>
+
+          <div className='backgroundPic1' style={{
+            margin: "10px",
+            height: "180px",
+            width: "270px",
+            borderRadius: "14px",
+            display: "flex",
+            flexWrap: 'wrap',
+            justifyContent: "center",
+          }}>
+            <img style={{ borderRadius: "15px" }} src={PeopleImg1} height="100%" width="100%" alt="" />
+            <div style={{ position: "relative", bottom: "120px", height: "40px", width: "40px", borderRadius: "50px", margin: "auto", background: "white" }}>
+              <div style={{ color: "red" }}><PlayArrowIcon style={{ fontSize: "40px" }} /></div>
             </div>
           </div>
 
@@ -85,72 +85,72 @@ const About = () => {
       {/* ......lorem Contant..... */}
       <section>
         <div style={{
-          display:"flex",
-          justifyContent:"center",
-          flexWrap:"wrap",
-          marginBottom:"80px",
-          marginTop:'35px',
-          gap:"5px",
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          marginBottom: "80px",
+          marginTop: '35px',
+          gap: "5px",
         }}>
-<div style={
-{
- display:'flex',
- justifyContent:'center',
-  width:"746px",
-}
-}> <img src={ fabiconPic} height= "100%"  width="100%" alt="" className='w-75' /></div>
+          <div style={
+            {
+              display: 'flex',
+              justifyContent: 'center',
+              width: "746px",
+            }
+          }> <img src={fabiconPic} height="100%" width="100%" alt="" className='w-75' /></div>
 
-<div style={
-{
-  
-  width:"746px",
-}
-}>
+          <div style={
+            {
 
-
-<div  style={{marginTop:"50px",height:"30px"}}> <p className='poppins-thin' style={{
-fontSize:" 16px",
-fontWeight: "400",
-lineHeight:" 27px",
-textAlign:" left",
-marginLeft:"8px",
-color: "rgba(227, 6, 19, 1)",
-}}>LOREM ISPUM DOLOR SIT AMET</p></div>
+              width: "746px",
+            }
+          }>
 
 
-
-<div  style={{height:"60px",color:"rgba(54, 64, 91, 1)",marginLeft:"8px",}}><h3 className='poppins-thin' >Lorem ipsum dolor sit amet</h3></div>
-
-<div className='text-secondary'> <p style={{marginLeft:"8px",}} className="poppins-thin">Lorem ipsum dolor sit amet consectetur. Metus etiam augue aliquet amet mattis quam  arcu et enim. Lobortis sapien pharetra at consectetur nibh pellentesque arcu massa. <br />sectetur adipisicing elit. Nisi iusto ipsum possimus dolor non ut, reiciendis iure consequuntur! A quam dignissimos laboriosam adipisicing elit. Nisi iusto ipsum possimus dolor non ut, reiciendis iure consequuntur! A quam dignissimos laboriosam eligendi optio! Quae nisi dolor sunt odio modi.</p></div>
-<div style={{color:"rgba(54, 64, 91, 1)",marginLeft:"8px",}}><p className="poppins-thin" style={{
-  color:"rgba(54, 64, 91, 1)",
-fontSize: "20px",
-fontWeight: "400",
-lineHeight: "26px",
-textAlign: "left",
-
-}}><CheckCircleIcon className='text-success'/>  Follow our SAC process</p></div>
-<div style={{ marginTop:"5px",marginLeft:"8px",}}>
-  <button
-  style={{
-    color:"white",
-    border:"1px solid rgba(227, 6, 19, 1)",
-padding: '16px 32px 16px 32px',
-gap: "10px",
-borderRadius: "0px 30px 30px 30px",
-opacity: "0px",
-background: "rgba(227, 6, 19, 1)"
+            <div style={{ marginTop: "50px", height: "30px" }}> <p className='poppins-thin' style={{
+              fontSize: " 16px",
+              fontWeight: "400",
+              lineHeight: " 27px",
+              textAlign: " left",
+              marginLeft: "8px",
+              color: "rgba(227, 6, 19, 1)",
+            }}>LOREM ISPUM DOLOR SIT AMET</p></div>
 
 
-  }}>find out more</button>
-</div>
-</div>
 
-</div>
-       
+            <div style={{ height: "60px", color: "rgba(54, 64, 91, 1)", marginLeft: "8px", }}><h3 className='poppins-thin' >Lorem ipsum dolor sit amet</h3></div>
+
+            <div className='text-secondary'> <p style={{ marginLeft: "8px", }} className="poppins-thin">Lorem ipsum dolor sit amet consectetur. Metus etiam augue aliquet amet mattis quam  arcu et enim. Lobortis sapien pharetra at consectetur nibh pellentesque arcu massa. <br />sectetur adipisicing elit. Nisi iusto ipsum possimus dolor non ut, reiciendis iure consequuntur! A quam dignissimos laboriosam adipisicing elit. Nisi iusto ipsum possimus dolor non ut, reiciendis iure consequuntur! A quam dignissimos laboriosam eligendi optio! Quae nisi dolor sunt odio modi.</p></div>
+            <div style={{ color: "rgba(54, 64, 91, 1)", marginLeft: "8px", }}><p className="poppins-thin" style={{
+              color: "rgba(54, 64, 91, 1)",
+              fontSize: "20px",
+              fontWeight: "400",
+              lineHeight: "26px",
+              textAlign: "left",
+
+            }}><CheckCircleIcon className='text-success' />  Follow our SAC Process</p></div>
+            <div style={{ marginTop: "5px", marginLeft: "8px", }}>
+              <button
+                style={{
+                  color: "white",
+                  border: "1px solid rgba(227, 6, 19, 1)",
+                  padding: '16px 32px 16px 32px',
+                  gap: "10px",
+                  borderRadius: "0px 30px 30px 30px",
+                  opacity: "0px",
+                  background: "rgba(227, 6, 19, 1)"
+
+
+                }}>find out more</button>
+            </div>
+          </div>
+
+        </div>
+
       </section>
 
-    <Footer/>
+      <Footer />
     </>
   )
 }
