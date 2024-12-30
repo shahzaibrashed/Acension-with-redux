@@ -24,3 +24,4 @@ const store = configureStore({
     reducer: persistedReducer
 })
 export default store
+

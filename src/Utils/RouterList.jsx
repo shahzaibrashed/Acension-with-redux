@@ -9,6 +9,7 @@ import Event from "../Screens/Event/Event"
 import GuardianDashboard from "../Screens/GuardianDashboard/GuardianDashboard"
 import CartItems from "../Screens/Cart/CartItems"
 import Favourite from "../Screens/Favourite/Favourite"
+import Order from "../Screens/Order/Order"
 export const RouterList = [
 
     {
@@ -53,5 +54,8 @@ export const RouterList = [
         path: "/Favourite",
         element: <Favourite/>
     },
-    
+    {
+        path: "/order/:id",
+        element: <Order/>
+    },
 ]

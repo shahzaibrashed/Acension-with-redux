@@ -18,7 +18,7 @@ function Header() {
 
   return (
     <div className="container m-auto">
-      <Navbar expand="lg" className="bg-bod" style={{ padding: '0.5rem' }}>
+      <Navbar expand="lg" className="bg-bod " style={{ padding: '0.5rem' }}>
         <Container fluid>
 <div className="logo" style={{ maxWidth: '120px' }}>
   <img src={Logo} alt="Logo" style={{ width: '100%', height: 'auto' }} />

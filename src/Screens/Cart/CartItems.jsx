@@ -1,272 +1,144 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap";
+import { DecrementQuantity, IncrementQuantity, RemoveProduct } from "../../redux/cartSystem";
+import { useDispatch, useSelector } from "react-redux";
+import Header from "../../Components/Header/Header";
+import Footer from "../../Components/layout/Footer";
+import CancelIcon from '@mui/icons-material/Cancel';
+import './CartItems.css';
+import { useNavigate } from "react-router-dom";
 
-import React, { useState } from 'react';
-import Header from '../../Components/Header/Header';
-import Footer from '../../Components/layout/Footer';
-import { DecrementQuantity, IncrementQuantity, RemoveProduct } from '../../redux/cartSystem';
-import { useDispatch, useSelector } from 'react-redux';
-import { FavoriteBorder } from '@mui/icons-material';
-import { Box } from '@mui/material';
-import { addWish } from '../../redux/wishSystem';
-import { Button, Card, Col, Container, Row, Form, Modal } from 'react-bootstrap';
-
-const CartItems = () => {
-    const { cart } = useSelector((state) => state.cartsItems); 
+const ShoppingCart = () => {
+    const { cart } = useSelector((state) => state.cartsItems);
     const dispatch = useDispatch();
-    const [showModal, setShowModal] = useState(false);
-    const [userDetails, setUserDetails] = useState({
-        name: '',
-        email: '',
-        address: '',
-    });
+    const navigate = useNavigate();
+
+    const handleBuyClick = (item) => {
+        navigate(`/order/${item.id}`, { state: { product: item } });
+    };
 
     const handleRemovetocart = (item) => {
         dispatch(RemoveProduct(item));
     };
 
-    const addFav = (item) => {
-        dispatch(addWish(item)); 
-    };
-
-    const handleBuyClick = () => {
-        setShowModal(true); 
-    };
-
-    const handleCloseModal = () => {
-        setShowModal(false);     };
-
-    const handleCheckout = () => {
-        alert('Order Success!');
-        setShowModal(false); 
-    };
-
     const handleIncrement = (item) => {
         dispatch(IncrementQuantity({ id: item.id }));
-      };
-      const handleDecrement = (item) => {
+    };
+
+    const handleDecrement = (item) => {
         dispatch(DecrementQuantity({ id: item.id }));
-      };
+    };
+
     return (
         <>
             <Header />
-            <p className="text-center fs-1" style={{ fontFamily: 'Inter' }}>
-                All Add to Cart Items
-            </p>
 
-            {cart.length === 0 ? (
-                <p className="text-center">No Add to Cart Items</p>
-            ) : (
-                <section>
-                    <Container className="py-5">
-                        <Row>
-                            {cart.map((item) => {
-                                return (
-                                    <Col key={item.id} md={4}>
-                                        <Card className="mb-4">
-                                           <div style={{height:"260px"}}> <Card.Img  variant="top" src={item.Img} height="100%" width="100%" /></div>
-                                            <Card.Body>
-                                                <Card.Text>{item.description}</Card.Text>
-                                                <div
+            <div className="container mt-5">
+                <h1 className="text-center mb-4" style={{ fontFamily: 'Inter' }}>
+                    All Add to Cart Items
+                </h1>
+
+                {cart.length === 0 ? (
+                    <p className="text-center">No Add to Cart Items</p>
+                ) : (
+                    <div className="table-responsive">
+                        <table className="table table-bordered align-middle">
+                            <thead className="table-light">
+                                <tr className="text-center">
+                                    <th>Action</th>
+                                    <th>Image</th>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Point</th>
+                                    <th>Cancel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {cart.map((item) => (
+                                    <tr key={item.id}>
+                                        <td className="text-center">
+                                            <Button className="w-100 bg-danger border-danger "
+                                                onClick={() => handleBuyClick(item)}
+                                            >
+                                        CheckOut
+                                            </Button>
+                                        </td>
+                                        <td className="text-center">
+                                            <img
+                                                src={item.Img}
+                                                alt={item.tittle}
+                                                className="img-fluid rounded"
+                                                style={{ width: "80px", height: "80px", objectFit: "cover" }}
+                                            />
+                                        </td>
+                                        <td className="text-center">
+                                            <strong>{item.tittle}</strong>
+                                            <br />
+                                            <small className="text-muted">{item.description}</small>
+                                        </td>
+                                        <td className="text-center">
+                                            <div className="d-flex justify-content-center align-items-center gap-2">
+                                            <button
                                                     style={{
+                                                        width: '27px',
+                                                        height: '27px',
+                                                        borderRadius: '50%',
+                                                        backgroundColor: 'green',
                                                         display: 'flex',
-                                                        justifyContent: 'space-between',
-                                                        margin: '7px',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        color: 'white',
+                                                        cursor: 'pointer',
+                                                        fontSize: '20px',
+                                                        border: "none",
+                                                        paddingBottom: "5px"
                                                     }}
+                                                    onClick={() => handleIncrement(item)}
                                                 >
-                                                    <p>{item.tittle}</p>
-                                                    <Box sx={{ cursor: 'pointer', marginLeft: '9px' }}>
-                                                        <FavoriteBorder onClick={() => addFav(item)} />
-                                                    </Box>
-                                                </div>
-
-                                                <div
+                                                    +
+                                                </button>
+                                                <div> {item.quantity}</div>
+                                                <button
                                                     style={{
+                                                        width: '27px',
+                                                        height: '27px',
+                                                        borderRadius: '50%',
+                                                        backgroundColor: 'red',
                                                         display: 'flex',
-                                                        justifyContent: 'space-between',
-                                                        margin: '7px',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        color: 'white',
+                                                        cursor: 'pointer',
+                                                        fontSize: '20px',
+                                                        border: "none",
+                                                        paddingBottom: "5px"
                                                     }}
+                                                    onClick={() => handleDecrement(item)}
                                                 >
-                                                    <p>Price: ${item.price}</p>
-    <div className="d-flex align-items-center gap-2 justify-content-center">
-      
-            <button 
-                style={{
-                    width: '27px',
-                    height: '27px',
-                    borderRadius: '50%',
-                    backgroundColor: 'green',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    cursor: 'pointer',
-                    fontSize: '20px',
-                    marginBottom:"15px",
-                    border:"none",
-                    paddingBottom:"5px"
-                }}
-                onClick={() => handleIncrement(item)}
-            >
-                +
-            </button>
-           <div style={{
-                    paddingBottom:"12px"}}> {item.quantity}</div>
-            <button 
-                style={{
-                    width: '27px',
-                    height: '27px',
-                    borderRadius: '50%',
-                    backgroundColor: 'red',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    cursor: 'pointer',
-                    fontSize: '20px',
-                    marginBottom:"15px",
-                    border:"none",
-                    paddingBottom:"5px"
-                }}
-                onClick={() => handleDecrement(item)}
-            >
-                -
-            </button>
-
-          
-        </div>
-                                                </div>
-
-                                                {/* Quantity input field */}
-                                               
-                                               
-
-                                                <div className="d-flex">
-                                                    <Button
-                                                        style={{
-                                                            height: '40px',
-                                                            width: '100px',
-                                                            border: '2px solid green',
-                                                            background: 'green',
-                                                            color: 'white',
-                                                            borderRadius: '10px',
-                                                            textAlign: 'center',
-                                                            margin: 'auto',
-                                                            marginBottom: '10px',
-                                                        }}
-                                                        onClick={handleBuyClick}
-                                                    >
-                                                        Buy
-                                                    </Button>
-                                                    <Button
-                                                        onClick={() => handleRemovetocart(item)}
-                                                        style={{
-                                                            height: '40px',
-                                                            width: '100px',
-                                                            border: '2px solid red',
-                                                            background: 'red',
-                                                            color: 'white',
-                                                            borderRadius: '10px',
-                                                            textAlign: 'center',
-                                                            margin: 'auto',
-                                                            marginBottom: '10px',
-                                                        }}
-                                                    >
-                                                        X
-                                                    </Button>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                );
-                            })}
-                        </Row>
-                    </Container>
-                </section>
-            )}
+                                                    -
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td className="text-center">${item.price * item.quantity}</td>
+                                        <td className="text-center text-warning">{item.point}</td>
+                                        <td className="text-center">
+                                            <CancelIcon
+                                                onClick={() => handleRemovetocart(item)}
+                                                sx={{ color: "red", cursor: "pointer" }}
+                                            />
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                )}
+            </div>
 
             <Footer />
-
-            {/* Checkout Modal */}
-            <Modal show={showModal} onHide={handleCloseModal}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Checkout</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formName">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter your name"
-                                value={userDetails.name}
-                                onChange={(e) =>
-                                    setUserDetails({ ...userDetails, name: e.target.value })
-                                }
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formEmail">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control
-                                type="email"
-                                placeholder="Enter your email"
-                                value={userDetails.email}
-                                onChange={(e) =>
-                                    setUserDetails({ ...userDetails, email: e.target.value })
-                                }
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formAddress">
-                            <Form.Label>Address</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter your address"
-                                value={userDetails.address}
-                                onChange={(e) =>
-                                    setUserDetails({ ...userDetails, address: e.target.value })
-                                }
-                            />
-                        </Form.Group>
-                    </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseModal}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleCheckout}>
-                        Confirm Order
-                    </Button>
-                </Modal.Footer>
-            </Modal>
         </>
     );
 };
 
-export default CartItems;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default ShoppingCart;

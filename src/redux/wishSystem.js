@@ -38,7 +38,7 @@ const wishSystem = createSlice({
                 localStorage.setItem("wishlistItems", JSON.stringify(state.wishlistItems));
         
                 Swal.fire({
-                    title: "Add to favorite Confirm!",
+                    title: "Item Add from favorite list!",
                     icon: "success",
                     draggable: true
                 });

@@ -9,12 +9,12 @@ import ImgSeven from '../../assest/Image/Rectangle 26 (5).png';
 import ImgEight from '../../assest/Image/Rectangle 26 (6).png';
 import Header from '../../../src/Components/Header/Header';
 import Footer from '../../../src/Components/layout/Footer';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AddCart } from '../../redux/cartSystem';
 import { Box } from '@mui/material';
-import { Favorite } from "@mui/icons-material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import StarIcon from '@mui/icons-material/Star';
-import { addWish } from "../../redux/wishSystem";
+import { addWish, removeWish } from "../../redux/wishSystem";
 
 const Shop = () => {
 
@@ -25,84 +25,84 @@ const Shop = () => {
       Img: ImgOne,
       description: "Lorem ipsum dolor sit amet consectetur.",
       tittle: "watch",
-      point: "4.20",
-      price: "30$",
-      timer: "20 min"
+      point: "★ ★ ★  ★ ★",
+      price:  34,
+      timer: "20 min",
 
     },
     {
       id: 1,
       Img: ImgTwo,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "T-Shirt",
+      point: "★ ★ ★",
+      price: 60,
     },
     {
       id: 2,
       Img: ImgThree,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "Beg",
+      point: "★ ★",
+      price: 34,
     },
     {
       id: 3,
       Img: ImgFour,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "Shoes",
+      point: "★ ★ ★ ★ ",
+      price: 370,
     }, {
       id: 4,
       Img: ImgFive,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "Airpods",
+      point: "★ ★ ★",
+      price: 30,
     }, {
       id: 5,
       Img: ImgSix,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "Keyboard",
+      point: "★ ★ ★ ★ ★ ",
+      price: 30,
     }, {
       id: 6,
       Img: ImgSeven,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "Cristmas Tree",
+      point: "★ ★ ★",
+      price: 30,
     },
     {
       id: 7,
       Img: ImgEight,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "Cycle",
+      point: "★ ★ ★ ",
+      price: 30,
     }, {
       id: 8,
       Img: ImgFive,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "Airpods",
+      point: "★ ★ ★ ★ ★ ★",
+      price: 30,
     }, {
       id: 9,
       Img: ImgSix,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "Keyboard",
+      point: "★ ★ ★",
+      price:  30,
     }, {
       id: 10,
       Img: ImgSeven,
       description: "Lorem ipsum dolor sit amet consectetur.",
-      tittle: "watch",
-      point: "4.20",
-      price: "30$",
+      tittle: "Tree",
+      point: "★ ★ ",
+      price: 30,
     },
   ];
 
@@ -113,18 +113,22 @@ const Shop = () => {
     dispatch(AddCart({ ...item }));
   };
 
-
-
   const addFav = (item) => {
     dispatch(addWish(item));
   };
+
+  const wishlistItems = useSelector((state) => state.wishlists.wishlistItems);
+
+  const removeFav = (item) => {
+    dispatch(removeWish(item))
+  }
 
 
 
   return (
     <>
       <Header />
-      <p className='text-center fs-1' style={{ fontFamily: " Inter", }}>All Product Cards </p>
+      <p className='text-center fs-1' style={{ fontFamily: " Inter",marginTop:"30px" }}>All Product Cards </p>
 
       <div style={{ background: "rgba(245, 237, 218, 1)" }}>
         {/* ..........  Card Section......... */}
@@ -142,20 +146,29 @@ const Shop = () => {
                   <p className="small">
                     {item.tittle}
                   </p>
-                  <p className="small text-danger">
-                    <p><StarIcon />{item.point}</p>
-                  </p>
+                
+                    <p className='text-warning'>{item.point}</p>
+                 
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", margin: "10px", height: "20px" }}>
                   <p className="small">
-                    {item.price}
+                   $  {item.price}
                   </p>
                   <Box sx={{ cursor: "pointer", marginLeft: "9px" }}>
-                    <Favorite className='text-primary'
-                      onClick={() => addFav(item)}
-                    />
+                    {wishlistItems.some((wishlistItem) => wishlistItem.id === item.id && wishlistItem.isFavourite) ? (
+                      <Favorite
+                        onClick={() => removeFav(item)}
+                        style={{ color: "red" }}
+                      />
+                    ) : (
+                      <FavoriteBorder
+                        onClick={() => addFav(item)}
+                        style={{ color: "red" }}
+                      />
+                    )}
                   </Box>
                 </div>
+                
                 <button onClick={() => handleAddtocart(item)} style={{
                   height: "40px", width: "200px", border: "2px solid red", background: "red", color: "white", borderRadius: "10px", textAlign: "center", margin: "auto", marginBottom: "10px",
                 }}>Add to Cart</button>

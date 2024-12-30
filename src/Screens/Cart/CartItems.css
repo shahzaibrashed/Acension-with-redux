@@ -1,0 +1,15 @@
+@media (max-width: 576px) {
+  .table {
+      font-size: 14px;
+  }
+  .btn-sm {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
+  }
+  img {
+      width: 60px !important;
+      height: 60px !important;
+  }
+}
+
+
