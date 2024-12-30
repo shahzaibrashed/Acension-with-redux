@@ -65,10 +65,10 @@ const ShoppingCart = () => {
                                             </Button>
                                         </td>
                                         <td className="text-center">
-                                            <img
+                                            <img 
                                                 src={item.Img}
                                                 alt={item.tittle}
-                                                className="img-fluid rounded"
+                                                className="img-fluid rounded imgg"
                                                 style={{ width: "80px", height: "80px", objectFit: "cover" }}
                                             />
                                         </td>
