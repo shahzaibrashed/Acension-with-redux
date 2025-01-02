@@ -1,14 +1,16 @@
+import './CartItems.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
-import { DecrementQuantity, IncrementQuantity, RemoveProduct } from "../../redux/cartSystem";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { DecrementQuantity, IncrementQuantity, RemoveProduct } from "../../redux/cartSystem";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/layout/Footer";
 import CancelIcon from '@mui/icons-material/Cancel';
-import './CartItems.css';
-import { useNavigate } from "react-router-dom";
+
 
 const ShoppingCart = () => {
+
     const { cart } = useSelector((state) => state.cartsItems);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -58,7 +60,7 @@ const ShoppingCart = () => {
                                 {cart.map((item) => (
                                     <tr key={item.id}>
                                         <td className="text-center">
-                                            <Button className="w-100 bg-danger border-danger "
+                                            <Button style={{background: "#2B3C58",border:"none"}} className="w-70"
                                                 onClick={() => handleBuyClick(item)}
                                             >
                                         CheckOut

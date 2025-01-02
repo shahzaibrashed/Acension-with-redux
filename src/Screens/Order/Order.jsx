@@ -2,10 +2,22 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/layout/Footer';
 import './Order.css'
+import Swal from 'sweetalert2';
+
 const Order = () => {
+    
     const location = useLocation();
     const navigate = useNavigate()
     const { product } = location.state || {};
+
+    const orderPlace = ()=>{
+         Swal.fire({
+                  title: "Order Succesfullly Confirm",
+                  icon: "success",
+                  draggable: true,
+                });
+        navigate("/shop")
+    }
 
     return (
         <>
@@ -148,7 +160,7 @@ const Order = () => {
                                         </button>
                                         <button
                                             className="btn btn-primary w-100"
-                                            onClick={() => navigate('/shop')}
+                                            onClick={orderPlace}
                                         >
                                             Place Order
                                         </button>

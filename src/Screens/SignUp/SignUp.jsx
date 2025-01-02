@@ -1,7 +1,11 @@
 import './SignUp.css';
 import Logo from '../../assest/Image/FFF_Ascension_LO 1.png'
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+
+    const Navigation = useNavigate()
+
     return (
         <>
 
@@ -16,7 +20,7 @@ const SignUp = () => {
                     margin: "auto",
                     borderRadius: "10px",
                     padding: "20px",
-                    marginTop:"20px",
+                    marginTop: "20px",
                 }}>
 
                     <div style={{ display: "flex", justifyContent: "space-between", }}>
@@ -25,7 +29,8 @@ const SignUp = () => {
                         }} className='poppins-thin'>Welcome to <span style={{
                             color: "rgba(255, 255, 255, 1)",
                         }}>Ascension</span></p>
-                        <p style={{ fontSize: "10px", color: "gray" }} className='poppins-thin'>Already have an Account? <br /> Sing In</p>
+
+                        <p onClick={() => Navigation("/login")} style={{ fontSize: "10px", color: "gray", cursor: "pointer" }} className='poppins-thin'>Already have an Account? <br /> Sing In</p>
                     </div>
 
                     <h3 className='poppins-thin' style={{ fontSize: "30px", color: "rgba(255, 255, 255, 1)" }}>Sign Up</h3>
@@ -35,15 +40,15 @@ const SignUp = () => {
                     <input style={{ width: "100%", padding: "10px", borderRadius: "10px", outline: "none", border: "none", marginTop: "5px" }} type="email" placeholder='Enter your username or email address' name="" id="" />
 
 
-                    <label style={{ fontSize: "12px", marginTop: "10px", color: "gray" }}>Enter your Password</label> <br />
-                    <div style={{ display: "flex", justifyContent: "space-between",gap:'5px'  }}>
-                        <select style={{ width: "100%", padding: "10px", borderRadius: "10px", outline: "none", border: "none", marginTop: "5px", padding: "5px" }} type="email" name="" id="" >
-                            <option value="Monday">Monday</option>
+                    <label style={{ fontSize: "12px", marginTop: "10px", color: "gray" }}>Date and Day</label> <br />
+                    <div style={{ display: "flex", justifyContent: "space-between", gap: '5px' }}>
+                        <select style={{ width: "100%",borderRadius: "10px", outline: "none", border: "none", marginTop: "5px", padding: "5px" }} type="email" name="" id="" >
+                            <option value="Monday">03-4-2024</option>
                             <option value="Monday">Monday</option>
                             <option value="Monday">Monday</option>
 
                         </select>
-                        <select style={{ width: "100%", padding: "10px", borderRadius: "10px", outline: "none", border: "none", marginTop: "5px", padding: "5px" }} type="email" name="" id="" >
+                        <select style={{ width: "100%",borderRadius: "10px", outline: "none", border: "none", marginTop: "5px", padding: "5px" }} type="email" name="" id="" >
                             <option value="Monday">Monday</option>
                             <option value="Monday">Monday</option>
                             <option value="Monday">Monday</option>
@@ -69,16 +74,18 @@ const SignUp = () => {
 
 
                     <div className='d-flex justify-content-center'>
-                        <button style={{
-                            marginTop: "15px",
-                            height: "40px",
-                            textAlign: "center",
-                            width: "240px",
-                            borderRadius: "0px 40px 40px 40px",
-                            color: "rgba(255, 255, 255, 1)",
-                            border: "none",
-                            background: " rgba(227, 6, 19, 1)",
-                        }}>Sign Up</button>
+                        <button
+                            onClick={() => Navigation('/Homee')}
+                            style={{
+                                marginTop: "15px",
+                                height: "40px",
+                                textAlign: "center",
+                                width: "240px",
+                                borderRadius: "0px 40px 40px 40px",
+                                color: "rgba(255, 255, 255, 1)",
+                                border: "none",
+                                background: " rgba(227, 6, 19, 1)",
+                            }}>Sign Up</button>
                     </div>
 
 

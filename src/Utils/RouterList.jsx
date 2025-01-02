@@ -14,8 +14,9 @@ export const RouterList = [
 
     {
         path: "/",
-        element: <Home />
-    }, {
+        element: <SignUp />
+    },
+    {
         path: "/Home",
         element: <Home2 />
     },
@@ -28,8 +29,8 @@ export const RouterList = [
         element: <Login />
     },
     {
-        path: "/SignUp",
-        element: <SignUp />
+        path: "/Homee",
+        element: <Home />
     },
     {
         path: "/Shop",
@@ -49,13 +50,14 @@ export const RouterList = [
     },
     {
         path: "/carts",
-        element: <CartItems/>
-    },{
+        element: <CartItems />
+    },
+    {
         path: "/Favourite",
-        element: <Favourite/>
+        element: <Favourite />
     },
     {
         path: "/order/:id",
-        element: <Order/>
+        element: <Order />
     },
 ]

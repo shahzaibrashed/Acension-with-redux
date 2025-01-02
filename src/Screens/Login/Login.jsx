@@ -1,7 +1,8 @@
 import './Login.css';
 import Logo from '../../assest/Image/FFF_Ascension_LO 1.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Login = () => {
+     const Navigation = useNavigate() 
     return (
         <>
             <div className="body-background">
@@ -22,7 +23,7 @@ const Login = () => {
                         }} className='poppins-thin'>Welcome to <span style={{
                             color: "rgba(255, 255, 255, 1)",
                         }}>Ascension</span></p>
-                        <p style={{ fontSize: "12px", marginTop: "10px", color: "gray" }} className='poppins-thin'>No Account? <br /> Sing Up</p>
+                        <p onClick={()=>Navigation("/")} style={{ fontSize: "12px", marginTop: "10px", color: "gray" }} className='poppins-thin'>No Account? <br /> Sing Up</p>
                     </div>
 
                     <h3 className='poppins-thin' style={{ fontSize: "30px", color: "rgba(255, 255, 255, 1)" }}>Sign in</h3>
@@ -46,7 +47,7 @@ const Login = () => {
                             border: "none",
                             background: " rgba(227, 6, 19, 1)",
                             marginBottom: "40px"
-                        }}> <Link style={{textDecoration:"none",   color: "rgba(255, 255, 255, 1)",}} to="/SignUp">Sign Up</Link> </button>
+                        }}> <Link style={{textDecoration:"none",   color: "rgba(255, 255, 255, 1)",}} to="/">Login</Link> </button>
                     </div>
 
                 </div>

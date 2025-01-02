@@ -37,7 +37,7 @@ const Home = () => {
           </div>
 
           <div style={{
-            width: "900px",
+            width: "70%",
           }}>
             <img src={LittleImage} width="100%" height="100%"  alt="" />
           </div>
